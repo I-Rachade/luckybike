@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+@theme {
+  --color-zink: #e4e7e3;
+  --color-papier: #f6f7f5;
+  --color-tinte: #17201c;
+  --color-tinte-weich: #4a5551;
+  --color-klee: #1f6f4a;
+  --color-klee-dunkel: #175838;
+  --color-funke: #3355ff;
+  --color-signal: #f2b705;
+
+  --font-display: var(--font-display), "Arial Narrow", sans-serif;
+  --font-stencil: var(--font-stencil), var(--font-display), sans-serif;
+  --font-body: var(--font-body), system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  background: var(--color-zink);
+  color: var(--color-tinte);
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
+  line-height: 1.55;
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-funke);
+  outline-offset: 3px;
+}
+
+::selection {
+  background: var(--color-funke);
+  color: var(--color-papier);
+}
+
+/* Explosionszeichnung: ohne JS bzw. bei reduzierter Bewegung sind die
+   Leistungen eine normale Liste; mit Motion liegen sie übereinander. */
+.werkstatt[data-motion="on"] .leistungen {
+  position: relative;
+}
+.werkstatt[data-motion="on"] .leistung {
+  position: absolute;
+  inset: 0 0 auto 0;
+  opacity: 0;
+}
+
+.werkstatt[data-motion="on"] .pin {
+  height: 100svh;
+  align-content: center;
+}
+.werkstatt[data-motion="on"] .hinweis {
+  display: block;
+}
+.werkstatt[data-motion="on"] .leistungen {
+  margin-top: 0;
+}
+.werkstatt[data-motion="on"] .leistungen,
+.werkstatt[data-motion="on"] .intro {
+  grid-area: 1 / 1;
+}
+.werkstatt[data-motion="on"] .pin > div:first-child {
+  display: grid;
+}
+@media (max-width: 767px) {
+  .werkstatt[data-motion="on"] .zeichnung {
+    max-height: 38svh;
+  }
+}
