@@ -18,4 +18,4 @@ Dann http://localhost:3000 öffnen.
 ## Stand
 
 Startseite mit Explosionszeichnung (Leistungen), Ablauf, Fahrzeugen, Ersatzteil-Vorschau und Kontakt.
-Texte, Preise, Adresse und Telefonnummer sind Platzhalter. Buchung, Shop und Backoffice folgen.
+Die Seite ist auf Französisch. Texte, Preise, Adresse und Telefonnummer sind Platzhalter. Buchung, Shop und Backoffice folgen.

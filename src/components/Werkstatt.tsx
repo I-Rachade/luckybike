@@ -28,27 +28,27 @@ const explode: Record<string, { x: number; y: number }> = {
 const leistungen = [
   {
     teile: ["akku"],
-    titel: "Akku und Zellen",
-    text: "Wir messen die echte Kapazität und tauschen einzelne Zellen, statt den ganzen Akku zu ersetzen. Vorher sagst du uns, ob sich die Reparatur für dich lohnt.",
-    punkte: ["Kapazitätstest mit Protokoll", "Zellentausch und Balancing", "Ladegerät und Ladebuchse"],
+    titel: "Batterie et cellules",
+    text: "Nous mesurons la capacité réelle et remplaçons les cellules une par une, au lieu de changer toute la batterie. Avant d’intervenir, nous vous disons si la réparation vaut le coup.",
+    punkte: ["Test de capacité avec rapport", "Remplacement de cellules et équilibrage", "Chargeur et prise de charge"],
   },
   {
     teile: ["motor"],
-    titel: "Motor und Antrieb",
-    text: "Nabenmotor oder Mittelmotor: Wir finden Geräusche, Leistungsverlust und Aussetzer und reparieren Lager, Getriebe und Sensoren.",
-    punkte: ["Lager und Getriebe", "Riemen, Kette und Ritzel", "Drehmoment- und Hallsensoren"],
+    titel: "Moteur et transmission",
+    text: "Moteur moyeu ou moteur pédalier : nous trouvons l’origine des bruits, des pertes de puissance et des coupures, puis réparons roulements, réducteur et capteurs.",
+    punkte: ["Roulements et réducteur", "Courroie, chaîne et pignons", "Capteurs de couple et à effet Hall"],
   },
   {
     teile: ["elektronik"],
-    titel: "Elektronik",
-    text: "Fehlercode im Display, Licht fällt aus, Motor reagiert nicht: Wir lesen die Steuerung aus und prüfen Controller, Kabelbaum und Stecker.",
-    punkte: ["Diagnose und Software-Updates", "Controller und Display", "Kabelbaum, Licht und Schalter"],
+    titel: "Électronique",
+    text: "Code d’erreur à l’écran, éclairage en panne, moteur qui ne répond plus : nous lisons le système de gestion et contrôlons contrôleur, faisceau et connecteurs.",
+    punkte: ["Diagnostic et mises à jour logicielles", "Contrôleur et écran", "Faisceau, éclairage et commandes"],
   },
   {
     teile: ["fahrwerk", "scheibe-hinten", "scheibe-vorn", "hinterrad", "vorderrad"],
-    titel: "Bremsen und Fahrwerk",
-    text: "Schwere Fahrzeuge brauchen starke Bremsen. Wir prüfen Scheiben und Beläge, entlüften die Hydraulik und stellen Gabel und Federbein auf dich ein.",
-    punkte: ["Beläge, Scheiben, Hydraulik", "Gabel- und Federbeinservice", "Reifen und Schläuche"],
+    titel: "Freins et suspensions",
+    text: "Un véhicule lourd a besoin de freins solides. Nous contrôlons disques et plaquettes, purgeons le circuit hydraulique et réglons fourche et amortisseur selon votre gabarit.",
+    punkte: ["Plaquettes, disques, purge hydraulique", "Entretien fourche et amortisseur", "Pneus et chambres à air"],
   },
 ];
 
@@ -131,30 +131,30 @@ export default function Werkstatt() {
   );
 
   return (
-    <section ref={root} id="leistungen" className="werkstatt" aria-label="Unsere Leistungen">
+    <section ref={root} id="leistungen" className="werkstatt" aria-label="Nos prestations">
       <div className="pin mx-auto grid max-w-[90rem] grid-cols-1 gap-x-10 px-5 pt-24 pb-12 md:grid-cols-12 md:px-10">
         <div className="order-2 md:order-1 md:col-span-5 md:self-center">
           <div className="intro">
             <h1 className="font-display text-[clamp(3rem,7vw,6.5rem)] leading-[0.9] font-extrabold tracking-[-0.01em] text-balance">
-              Wir bringen dein <span className="whitespace-nowrap">E-Fahrzeug</span> zurück auf die Straße.
+              On remet votre véhicule électrique sur la route.
             </h1>
             <p className="mt-6 max-w-[34rem] text-lg text-tinte-weich">
-              Werkstatt für E-Motorräder, E-Bikes und E-Roller. Akku, Motor,
-              Elektronik und Bremsen unter einem Dach, mit Kostenvoranschlag vor
-              jeder Reparatur.
+              Atelier de réparation pour motos, vélos et scooters électriques.
+              Batterie, moteur, électronique et freins sous un même toit, avec un
+              devis avant chaque réparation.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <a
                 href="#termin"
                 className="rounded-full bg-klee px-6 py-3 font-bold text-papier transition-colors hover:bg-klee-dunkel"
               >
-                Termin buchen
+                Prendre rendez-vous
               </a>
               <a
                 href="#ersatzteile"
                 className="rounded-full border-2 border-tinte px-6 py-[10px] font-bold transition-colors hover:bg-tinte hover:text-papier"
               >
-                Ersatzteile ansehen
+                Voir les pièces détachées
               </a>
             </div>
           </div>
@@ -177,17 +177,17 @@ export default function Werkstatt() {
             ))}
             <li className="leistung">
               <h2 className="font-display text-5xl leading-none font-extrabold md:text-6xl">
-                Wieder zusammen, wieder unterwegs.
+                Remonté, prêt à repartir.
               </h2>
               <p className="mt-4 max-w-[32rem] text-tinte-weich">
-                Du verfolgst jeden Schritt in deinem Kundenkonto und bekommst
-                eine Nachricht, sobald dein Fahrzeug abholbereit ist.
+                Vous suivez chaque étape depuis votre espace client et recevez
+                un message dès que votre véhicule est prêt à être récupéré.
               </p>
               <a
                 href="#termin"
                 className="mt-6 inline-block rounded-full bg-klee px-6 py-3 font-bold text-papier transition-colors hover:bg-klee-dunkel"
               >
-                Termin buchen
+                Prendre rendez-vous
               </a>
             </li>
           </ol>
@@ -196,7 +196,7 @@ export default function Werkstatt() {
         <div className="order-1 md:order-2 md:col-span-7 md:self-center">
           <BikeDrawing className="zeichnung mx-auto w-full max-w-[52rem] text-tinte" />
           <p className="hinweis mt-2 hidden text-center text-sm text-tinte-weich">
-            Scroll weiter, um das Motorrad zu zerlegen.
+            Faites défiler pour démonter la moto.
           </p>
         </div>
       </div>

@@ -2,48 +2,48 @@ import Werkstatt from "@/components/Werkstatt";
 
 const ablauf = [
   {
-    titel: "Termin buchen",
-    text: "Fahrzeug wählen, Problem beschreiben, Fotos hochladen und einen freien Termin aussuchen.",
+    titel: "Prendre rendez-vous",
+    text: "Choisissez votre véhicule, décrivez le problème, ajoutez des photos et réservez un créneau libre.",
   },
   {
-    titel: "Diagnose",
-    text: "Wir lesen die Elektronik aus, testen den Akku und prüfen das ganze Fahrzeug.",
+    titel: "Diagnostic",
+    text: "Nous lisons l’électronique, testons la batterie et contrôlons tout le véhicule.",
   },
   {
-    titel: "Kostenvoranschlag freigeben",
-    text: "Du bekommst den Preis vorab und gibst die Reparatur mit einem Klick frei.",
+    titel: "Valider le devis",
+    text: "Vous recevez le prix à l’avance et validez la réparation en un clic.",
   },
   {
-    titel: "Reparatur",
-    text: "Du siehst live, ob wir auf Teile warten oder schon schrauben.",
+    titel: "Réparation",
+    text: "Vous voyez en direct si nous attendons des pièces ou si nous sommes déjà à l’œuvre.",
   },
   {
-    titel: "Abholen",
-    text: "Sobald alles fertig ist, bekommst du eine Nachricht und bezahlst bei Abholung oder online.",
+    titel: "Récupérer",
+    text: "Dès que tout est prêt, vous recevez un message et payez au retrait ou en ligne.",
   },
 ];
 
 const fahrzeuge = [
   {
-    titel: "E-Bikes und Pedelecs",
-    text: "City, Trekking, Lastenrad und E-MTB. Mittel- und Nabenmotoren aller gängigen Systeme.",
+    titel: "Vélos électriques",
+    text: "Ville, trekking, vélo cargo et VTT électrique. Moteurs pédalier et moyeu de toutes les marques courantes.",
   },
   {
-    titel: "E-Motorräder",
-    text: "Leichtkraft- und Motorradklasse, Offroad und Straße. Hochvolt-Akkus nur von geschultem Personal.",
+    titel: "Motos électriques",
+    text: "Équivalent 125 cm³ et plus, route et tout-terrain. Batteries haute tension manipulées uniquement par du personnel habilité.",
   },
   {
-    titel: "E-Roller",
-    text: "Roller und Scooter mit Zulassung. Akku, Antrieb, Bremsen und Licht für den TÜV.",
+    titel: "Scooters électriques",
+    text: "Scooters et trottinettes homologués. Batterie, motorisation, freins et éclairage remis en conformité.",
   },
 ];
 
 // Beispielsortiment, bis der Shop an die Datenbank angebunden ist.
 const ersatzteile = [
-  { name: "Scheibenbremsbeläge, organisch", passt: "Shimano, Tektro, Magura", preis: "24,90 €" },
-  { name: "Ladegerät 42 V, 4 A", passt: "36-V-Akkus mit Rosenberger-Stecker", preis: "89,00 €" },
-  { name: "Antriebsriemen 118 Zähne", passt: "Gates CDX", preis: "64,50 €" },
-  { name: "Reifen 17 Zoll, Straße", passt: "E-Motorräder bis 125 cm³-Klasse", preis: "119,00 €" },
+  { name: "Plaquettes de frein à disque, organiques", passt: "Shimano, Tektro, Magura", preis: "24,90 €" },
+  { name: "Chargeur 42 V, 4 A", passt: "Batteries 36 V avec connecteur Rosenberger", preis: "89,00 €" },
+  { name: "Courroie de transmission 118 dents", passt: "Gates CDX", preis: "64,50 €" },
+  { name: "Pneu 17 pouces, route", passt: "Motos électriques équivalent 125 cm³", preis: "119,00 €" },
 ];
 
 export default function Home() {
@@ -54,17 +54,17 @@ export default function Home() {
           <a href="#" className="font-stencil text-3xl leading-none tracking-wide">
             Lucky Bike
           </a>
-          <nav aria-label="Hauptnavigation" className="hidden gap-8 md:flex">
-            <a href="#leistungen" className="hover:text-klee">Leistungen</a>
-            <a href="#ablauf" className="hover:text-klee">Ablauf</a>
-            <a href="#ersatzteile" className="hover:text-klee">Ersatzteile</a>
-            <a href="#kontakt" className="hover:text-klee">Kontakt</a>
+          <nav aria-label="Navigation principale" className="hidden gap-8 md:flex">
+            <a href="#leistungen" className="hover:text-klee">Prestations</a>
+            <a href="#ablauf" className="hover:text-klee">Déroulement</a>
+            <a href="#ersatzteile" className="hover:text-klee">Pièces détachées</a>
+            <a href="#kontakt" className="hover:text-klee">Contact</a>
           </nav>
           <a
             href="#termin"
             className="rounded-full bg-tinte px-5 py-2 text-sm font-bold text-papier transition-colors hover:bg-klee"
           >
-            Termin buchen
+            Prendre rendez-vous
           </a>
         </div>
       </header>
@@ -75,7 +75,7 @@ export default function Home() {
         <section id="ablauf" className="scroll-mt-20 bg-papier">
           <div className="mx-auto max-w-[90rem] px-5 py-24 md:px-10 md:py-32">
             <h2 className="max-w-[18ch] font-display text-[clamp(2.5rem,5vw,4.5rem)] leading-[0.95] font-extrabold">
-              So läuft deine Reparatur ab
+              Comment se passe votre réparation
             </h2>
             <ol className="mt-14 grid gap-10 md:grid-cols-5 md:gap-6">
               {ablauf.map((schritt, i) => (
@@ -97,7 +97,7 @@ export default function Home() {
               id="fahrzeuge-titel"
               className="font-display text-[clamp(2.5rem,5vw,4.5rem)] leading-[0.95] font-extrabold md:col-span-4"
             >
-              Was wir reparieren
+              Ce que nous réparons
             </h2>
             <dl className="md:col-span-8">
               {fahrzeuge.map((f) => (
@@ -117,25 +117,25 @@ export default function Home() {
           <div className="mx-auto max-w-[90rem] px-5 py-24 md:px-10 md:py-32">
             <div className="flex flex-wrap items-end justify-between gap-6">
               <h2 className="max-w-[16ch] font-display text-[clamp(2.5rem,5vw,4.5rem)] leading-[0.95] font-extrabold">
-                Ersatzteile aus unserer Werkstatt
+                Les pièces de notre atelier
               </h2>
               <a
                 href="#ersatzteile"
                 className="rounded-full border-2 border-papier px-6 py-[10px] font-bold transition-colors hover:bg-papier hover:text-tinte"
               >
-                Zum Shop
+                Voir la boutique
               </a>
             </div>
             <p className="mt-6 max-w-[40rem] text-papier/70">
-              Die Teile, die wir selbst verbauen. Bestell online und hol sie ab
-              oder lass sie direkt bei deinem Termin einbauen.
+              Les pièces que nous montons nous-mêmes. Commandez en ligne et
+              retirez-les à l’atelier, ou faites-les poser lors de votre rendez-vous.
             </p>
             <table className="mt-12 w-full text-left">
               <thead className="sr-only">
                 <tr>
-                  <th>Teil</th>
-                  <th>Passt für</th>
-                  <th>Preis</th>
+                  <th>Pièce</th>
+                  <th>Compatible avec</th>
+                  <th>Prix</th>
                 </tr>
               </thead>
               <tbody>
@@ -156,25 +156,25 @@ export default function Home() {
         <section id="termin" className="scroll-mt-20 bg-klee text-papier">
           <div className="mx-auto grid max-w-[90rem] gap-10 px-5 py-24 md:grid-cols-12 md:px-10 md:py-28">
             <h2 className="font-display text-[clamp(3rem,7vw,6.5rem)] leading-[0.9] font-extrabold md:col-span-7">
-              Dein Fahrzeug fährt nicht? Buch dir einen Termin.
+              Votre véhicule ne roule plus ? Prenez rendez-vous.
             </h2>
             <div className="md:col-span-5 md:self-end">
               <p className="text-lg text-papier/85">
-                Die Online-Buchung kommt in Kürze. Bis dahin erreichst du uns
-                telefonisch oder per E-Mail.
+                La réservation en ligne arrive bientôt. En attendant, joignez-nous
+                par téléphone ou par e-mail.
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <a
-                  href="tel:+490000000000"
+                  href="tel:+33000000000"
                   className="rounded-full bg-papier px-6 py-3 font-bold text-klee-dunkel transition-colors hover:bg-zink"
                 >
-                  Anrufen
+                  Appeler
                 </a>
                 <a
                   href="mailto:werkstatt@luckybike.example"
                   className="rounded-full border-2 border-papier px-6 py-[10px] font-bold transition-colors hover:bg-papier hover:text-klee-dunkel"
                 >
-                  E-Mail schreiben
+                  Écrire un e-mail
                 </a>
               </div>
             </div>
@@ -187,31 +187,44 @@ export default function Home() {
           <div className="md:col-span-4">
             <p className="font-stencil text-4xl leading-none">Lucky Bike</p>
             <p className="mt-3 text-tinte-weich">
-              Werkstatt für E-Motorräder, E-Bikes und E-Roller.
+              Atelier de réparation pour motos, vélos et scooters électriques.
             </p>
           </div>
           <div className="md:col-span-3">
             <h2 className="font-bold">Adresse</h2>
             <p className="mt-2 text-tinte-weich">
-              Musterstraße 1<br />
-              00000 Musterstadt
+              1 rue de l’Exemple<br />
+              00000 Ville
             </p>
           </div>
           <div className="md:col-span-3">
-            <h2 className="font-bold">Öffnungszeiten</h2>
+            <h2 className="font-bold">Horaires</h2>
             <p className="mt-2 text-tinte-weich">
-              Mo–Fr 9–18 Uhr<br />
-              Sa 10–14 Uhr
+              Lun–ven : 9 h–18 h<br />
+              Sam : 10 h–14 h
             </p>
           </div>
           <div className="md:col-span-2">
-            <h2 className="font-bold">Rechtliches</h2>
+            <h2 className="font-bold">Informations légales</h2>
             <p className="mt-2 text-tinte-weich">
-              <a href="#" className="hover:text-klee">Impressum</a>
+              <a href="#" className="hover:text-klee">Mentions légales</a>
               <br />
-              <a href="#" className="hover:text-klee">Datenschutz</a>
+              <a href="#" className="hover:text-klee">Confidentialité</a>
             </p>
           </div>
+        </div>
+        <div className="border-t border-tinte/15">
+          <p className="mx-auto max-w-[90rem] px-5 py-6 text-sm text-tinte-weich md:px-10">
+            Site réalisé par{" "}
+            <a
+              href="https://poinderecharge.com"
+              target="_blank"
+              rel="noopener"
+              className="font-bold text-tinte underline decoration-tinte/30 underline-offset-4 hover:text-klee hover:decoration-klee"
+            >
+              poinderecharge
+            </a>
+          </p>
         </div>
       </footer>
     </>

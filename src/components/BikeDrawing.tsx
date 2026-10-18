@@ -64,7 +64,7 @@ export default function BikeDrawing({ className }: { className?: string }) {
       viewBox="-40 -80 900 640"
       className={className}
       role="img"
-      aria-label="Technische Zeichnung eines E-Motorrads mit Akku, Motor, Elektronik, Bremsen und Rädern"
+      aria-label="Dessin technique d’une moto électrique avec batterie, moteur, électronique, freins et roues"
       fill="none"
       stroke="currentColor"
       strokeLinecap="round"

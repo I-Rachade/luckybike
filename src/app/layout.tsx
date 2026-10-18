@@ -23,15 +23,15 @@ const body = Atkinson_Hyperlegible_Next({
 });
 
 export const metadata: Metadata = {
-  title: "Lucky Bike – Werkstatt für E-Motorräder und E-Bikes",
+  title: "Lucky Bike – Atelier de réparation motos et vélos électriques",
   description:
-    "Reparatur und Service für E-Motorräder, E-Bikes und E-Roller: Akku, Motor, Elektronik, Bremsen. Termin online buchen.",
+    "Réparation et entretien de motos, vélos et scooters électriques : batterie, moteur, électronique, freins. Prenez rendez-vous en ligne.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
-      lang="de"
+      lang="fr"
       className={`${display.variable} ${stencil.variable} ${body.variable} antialiased`}
     >
       <body>{children}</body>
